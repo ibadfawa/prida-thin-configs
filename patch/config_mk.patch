@@ -1,0 +1,27 @@
+--- a/config.mk	2022-10-16 17:21:38.367775504 +0800
++++ b/config.mk	2022-10-16 17:22:58.387775509 +0800
+@@ -4,17 +4,17 @@
+ FRIDA := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+ 
+ # Features ordered by binary footprint, from largest to smallest
+-FRIDA_V8 ?= auto
+-FRIDA_CONNECTIVITY ?= enabled
+-FRIDA_DATABASE ?= enabled
+-FRIDA_JAVA_BRIDGE ?= auto
+-FRIDA_OBJC_BRIDGE ?= auto
+-FRIDA_SWIFT_BRIDGE ?= auto
++FRIDA_V8 ?= disabled
++FRIDA_CONNECTIVITY ?= disabled
++FRIDA_DATABASE ?= disabled
++FRIDA_JAVA_BRIDGE ?= enabled
++FRIDA_OBJC_BRIDGE ?= disabled
++FRIDA_SWIFT_BRIDGE ?= disabled
+ 
+ FRIDA_AGENT_EMULATED ?= yes
+ 
+ # Include jailbreak-specific integrations
+-FRIDA_JAILBREAK ?= auto
++FRIDA_JAILBREAK ?= disabled
+ 
+ FRIDA_ASAN ?= no
+ 

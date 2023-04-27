@@ -55,6 +55,7 @@ jobs:
           git clone https://github.com/kyzsuukii/prida-thin-configs      
           cd frida
           git apply ../prida-thin-configs/patch/config_mk.patch
+          make -f Makefile.sdk.mk
           make core-android-arm64
           make core-android-arm
           make core-android-x86

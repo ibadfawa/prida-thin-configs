@@ -1,7 +1,7 @@
 diff --git a/config.mk.txt b/patch.txt
 index 6952c4d..3c46242 100644
---- a/config.mk.txt
-+++ b/patch.txt
+--- a/config.mk
++++ b/config.mk
 @@ -4,17 +4,17 @@ PREFIX ?= /usr
  FRIDA := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
  

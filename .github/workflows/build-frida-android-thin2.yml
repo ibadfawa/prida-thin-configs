@@ -58,8 +58,6 @@ jobs:
           make -f Makefile.sdk.mk
           make core-android-arm64
           make core-android-arm
-          make core-android-x86
-          make core-android-x86_64
 
       - name: Package build result for Android
         shell: bash
@@ -68,19 +66,11 @@ jobs:
 
           xz build/frida-android-arm64/bin/frida-server
           xz build/frida-android-arm/bin/frida-server
-          xz build/frida-android-x86/bin/frida-server
-          xz build/frida-android-x86_64/bin/frida-server
-
-          xz build/frida-android-arm64/bin/frida-inject        
-          xz build/frida-android-arm/bin/frida-inject
-          xz build/frida-android-x86/bin/frida-inject
-          xz build/frida-android-x86_64/bin/frida-inject
+          
 
           xz build/frida-android-arm64/lib/frida/64/frida-gadget.so        
           xz build/frida-android-arm/lib/frida/32/frida-gadget.so
-          xz build/frida-android-x86/lib/frida/32/frida-gadget.so
-          xz build/frida-android-x86_64/lib/frida/64/frida-gadget.so
-
+          
           popd
 
       - name: Upload frida-server-arm64
@@ -95,42 +85,7 @@ jobs:
           name: frida-server-arm.xz
           path: frida/build/frida-android-arm/bin/frida-server.xz
 
-      - name: Upload frida-server-x86
-        uses: actions/upload-artifact@v3
-        with:
-          name: frida-server-x86.xz
-          path: frida/build/frida-android-x86/bin/frida-server.xz
-
-      - name: Upload frida-server-x86_64
-        uses: actions/upload-artifact@v3
-        with:
-          name: frida-server-x86_64.xz
-          path: frida/build/frida-android-x86_64/bin/frida-server.xz
-
-      - name: Upload frida-inject-arm64
-        uses: actions/upload-artifact@v3
-        with:
-          name: frida-inject-arm64.xz
-          path: frida/build/frida-android-arm64/bin/frida-inject.xz
-
-      - name: Upload frida-inject-arm
-        uses: actions/upload-artifact@v3
-        with:
-          name: frida-inject-arm.xz
-          path: frida/build/frida-android-arm/bin/frida-inject.xz
-
-      - name: Upload frida-inject-x86
-        uses: actions/upload-artifact@v3
-        with:
-          name: frida-inject-x86.xz
-          path: frida/build/frida-android-x86/bin/frida-inject.xz
-
-      - name: Upload frida-inject-x86_64
-        uses: actions/upload-artifact@v3
-        with:
-          name: frida-inject-x86_64.xz
-          path: frida/build/frida-android-x86_64/bin/frida-inject.xz
-
+      
       - name: Upload frida-gadget-arm64
         uses: actions/upload-artifact@v3
         with:
@@ -143,14 +98,4 @@ jobs:
           name: frida-gadget-arm.xz
           path: frida/build/frida-android-arm/lib/frida/32/frida-gadget.so.xz
 
-      - name: Upload frida-gadget-x86
-        uses: actions/upload-artifact@v3
-        with:
-          name: frida-gadget-x86.xz
-          path: frida/build/frida-android-x86/lib/frida/32/frida-gadget.so.xz
-
-      - name: Upload frida-gadget-x86_64
-        uses: actions/upload-artifact@v3
-        with:
-          name: frida-gadget-x86_64.xz
-          path: frida/build/frida-android-x86_64/lib/frida/64/frida-gadget.so.xz
+      

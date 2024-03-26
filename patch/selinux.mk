@@ -1,7 +1,7 @@
 diff --git a/lib/selinux/patch.c b/lib/selinux/patch.c
 index db631ffd..2e6c5bb5 100644
---- a/lib/selinux/patch.c
-+++ b/lib/selinux/patch.c
+--- a/frida-core/lib/selinux/patch.c
++++ b/frida-core/lib/selinux/patch.c
 @@ -58,7 +58,7 @@ G_DEFINE_QUARK (frida-selinux-error-quark, frida_selinux_error)
  void
  frida_selinux_patch_policy (void)

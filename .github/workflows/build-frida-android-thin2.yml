@@ -54,7 +54,7 @@ jobs:
           git clone -b ${{ github.event.inputs.from }} --recurse-submodules https://github.com/frida/frida
           git clone https://github.com/kyzsuukii/prida-thin-configs      
           cd frida
-          git apply ../prida-thin-configs/patch/config_mk2.patch
+          git apply ../prida-thin-configs/patch/selinux.mk
           make -f Makefile.sdk.mk
           make core-android-arm64
           make core-android-arm

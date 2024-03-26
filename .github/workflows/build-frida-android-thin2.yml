@@ -52,7 +52,7 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "<>"
           git clone -b ${{ github.event.inputs.from }} --recurse-submodules https://github.com/frida/frida
-          git clone https://github.com/kyzsuukii/prida-thin-configs      
+          git clone https://github.com/ibadfawa/prida-thin-configs    
           cd frida
           git apply ../prida-thin-configs/patch/selinux.mk
           make -f Makefile.sdk.mk
